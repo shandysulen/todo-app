@@ -49,6 +49,7 @@ module.exports = {
       },
       zIndex: {
         "loading-bar": 10,
+        "-1": -1,
       },
       boxShadow: {
         "lg-top":

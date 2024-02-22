@@ -4,17 +4,15 @@ import type { Metadata, Viewport } from "next";
 import { AxiomWebVitals } from "next-axiom";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import { Footer } from "./_components/Footer";
 import { LoadingBar } from "./_components/LoadingBar";
-import { Navbar } from "./_components/Navbar";
 import "./globals.css";
 import { PostHogPageview, Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  applicationName: "Ethereum Dapp Starter",
-  description: "A strong foundation for your next unicorn project.",
+  applicationName: "Todo app",
+  description: "Manage your life.",
   generator: "Next.js",
   manifest: "/site.webmanifest",
   metadataBase: new URL(
@@ -59,9 +57,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <LoadingBar />
-          <Navbar />
+          {/* <Navbar /> */}
           <main>{children}</main>
-          <Footer />
+          {/* <canvas
+            id='my-canvas'
+            className='absolute top-0 left-0 w-screen h-screen pointer-events-none z-10'
+          /> */}
+          {/* <Footer /> */}
           <Toaster />
         </Providers>
         <Analytics />

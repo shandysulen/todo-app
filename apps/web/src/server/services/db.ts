@@ -1,6 +1,6 @@
 import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
-import { env } from "@/env.mjs";
+import { env } from "@/env.js";
 import * as schema from "@/schemas";
 
 export const createDbClient = () => {

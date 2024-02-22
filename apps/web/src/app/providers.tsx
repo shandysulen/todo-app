@@ -15,7 +15,8 @@ import { PropsWithChildren, useEffect } from "react";
 import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import { env } from "@/env.mjs";
+import { env } from "@/env.js";
+import { AddTodoModalProvider } from "./_components/AddTodoModalProvider";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
 
 const wagmiConfig = createConfig(
@@ -93,7 +94,9 @@ export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
           <SIWEProvider {...siweConfig}>
             <ConnectKitProvider>
               <ThemeProvider defaultTheme='system' attribute='class'>
-                <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
+                <TooltipProvider delayDuration={0}>
+                  <AddTodoModalProvider>{children}</AddTodoModalProvider>
+                </TooltipProvider>
               </ThemeProvider>
             </ConnectKitProvider>
           </SIWEProvider>
