@@ -6,6 +6,8 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import { LoadingBar } from "./_components/LoadingBar";
 import "./globals.css";
+import { AddTodoDialog } from "./_components/AddTodoDialog";
+import { EditTodoDialog } from "./_components/EditTodoDialog";
 import { PostHogPageview, Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -65,6 +67,8 @@ export default function RootLayout({
           /> */}
           {/* <Footer /> */}
           <Toaster />
+          <AddTodoDialog />
+          <EditTodoDialog />
         </Providers>
         <Analytics />
         <AxiomWebVitals />

@@ -1,8 +1,6 @@
 import type { Config } from "drizzle-kit";
 import { env } from "./src/env.js";
 
-// dotenv.config({ path: ".env.local" });
-
 export default {
   schema: "./src/schemas/*",
   out: "./drizzle",

@@ -1,22 +1,22 @@
 import { PropsWithChildren } from "react";
-import { AddTodoModalContext } from "@/hooks/useAddTodoModal";
+import { AddTodoModalContext } from "@/hooks/useAddTodoDialog";
 import { useDisclosure } from "@/hooks/useDisclosure";
 
-export const AddTodoModalProvider: React.FC<PropsWithChildren> = ({
+export const AddTodoDialogProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const { isOpen, setIsOpen, onClose, onOpen } = useDisclosure();
 
   return (
     <AddTodoModalContext.Provider
       value={{
         isOpen,
+        setIsOpen,
         onClose,
         onOpen,
       }}
     >
       {children}
-      {/* {isOpen && <AddTodoModal />} */}
     </AddTodoModalContext.Provider>
   );
 };

@@ -2,6 +2,7 @@ import { TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { todos } from "@/schemas";
+import { addTodoSchema } from "@/schemas/todos";
 import { protectedProcedure, router } from "../trpc";
 
 export const updateTodoSchema = z.object({
@@ -9,6 +10,7 @@ export const updateTodoSchema = z.object({
   todo: z.object({
     name: z.string().optional(),
     description: z.string().optional(),
+    complete: z.boolean().optional(),
   }),
 });
 
@@ -17,22 +19,23 @@ export const todoRouter = router({
   add: protectedProcedure
     .input(addTodoSchema)
     .mutation(async ({ input: todo, ctx: { session, db } }) => {
-      // Get address from `session`
-      const { address } = session;
-
       // Insert into db
       try {
         const insertResult = await db
           .insert(todos)
           .values({
             ...todo,
-            address,
+            address: session.address,
             createdAt: new Date(),
             lastModified: new Date(),
           })
+          .returning()
           .run();
 
-        return insertResult.rows[0];
+        const row = insertResult.rows[0];
+        console.log(row);
+
+        return row;
       } catch (err) {
         console.error(err);
 
@@ -108,6 +111,7 @@ export const todoRouter = router({
             lastModified: new Date(),
           })
           .where(eq(todos.id, id))
+          .returning()
           .run();
 
         return updateResult.rows[0];
@@ -131,6 +135,7 @@ export const todoRouter = router({
         const deleteResult = await db
           .delete(todos)
           .where(eq(todos.id, id))
+          .returning()
           .run();
 
         return deleteResult.rows[0];

@@ -4,10 +4,12 @@ import { z } from "zod";
 
 export const todos = sqliteTable("todos", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-  address: text("name", {}).notNull(),
+  address: text("address").notNull(),
+  name: text("name").notNull(),
   description: text("description"),
-  createdAt: integer("joined_date", { mode: "timestamp" }).notNull(),
-  lastModified: integer("joined_date", { mode: "timestamp" }).notNull(),
+  complete: integer("complete", { mode: "boolean" }).notNull().default(false),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+  lastModified: integer("last_modified", { mode: "timestamp" }).notNull(),
 });
 
 export type DbTodo = InferModel<typeof todos>; // return type when queried
@@ -15,7 +17,22 @@ export type NewDbTodo = InferModel<typeof todos, "insert">; // return type when 
 
 export const addTodoSchema = z.object({
   name: z.string().min(1, "Required."),
-  description: z.string(),
+  description: z.string().optional(),
 });
 
-export type AddTodoSchema = z.infer<typeof addTodoSchema>;
+export type AddTodo = z.infer<typeof addTodoSchema>;
+
+export const addTodoWithIdSchema = z.object({
+  id: z.number(),
+  name: z.string().min(1, "Required."),
+  description: z.string().optional(),
+});
+
+export type AddTodoWithId = z.infer<typeof addTodoWithIdSchema>;
+
+// export const editTodoSchema = z.object({
+//   name: z.string().min(1, "Required."),
+//   description: z.string().optional(),
+// });
+
+// export type EditTodo = z.infer<typeof editTodoSchema>;

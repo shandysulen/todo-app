@@ -18,6 +18,10 @@ export default function TrpcQueryClientProvider({
 }: {
   children: React.ReactNode;
 }) {
+  /* The reason for using useState in the creation of the queryClient
+  and the TRPCClient, as opposed to declaring them outside of the component,
+  is to ensure that each request gets a unique client when using SSR.
+  If you use client side rendering then you can move them if you wish. */
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({

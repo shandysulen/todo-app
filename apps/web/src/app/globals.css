@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --brand: 187, 92%, 69%;
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 100% 50%;

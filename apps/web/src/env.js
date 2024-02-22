@@ -15,6 +15,9 @@ export const env = createEnv({
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   runtimeEnv: {
+    DB_URL: process.env.DB_URL,
+    DB_AUTH_TOKEN: process.env.DB_AUTH_TOKEN,
+    PASSWORD: process.env.PASSWORD,
     NEXT_PUBLIC_ALCHEMY_ID: process.env.NEXT_PUBLIC_ALCHEMY_ID,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
     NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,

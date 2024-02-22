@@ -13,19 +13,25 @@ import {
   Textarea,
 } from "@eds/components";
 import { zodResolver } from "@hookform/resolvers/zod";
+import confetti from "canvas-confetti";
 import { useForm } from "react-hook-form";
 import { trpc } from "@/app/_trpc/client";
-import { useAddTodoDialog } from "@/hooks/useAddTodoDialog";
+import { useEditTodoDialog } from "@/hooks/useEditTodoDialog";
 import { useInvalidateTodoAllQuery } from "@/hooks/useInvalidateTodoAllQuery";
 import { addTodoSchema, type AddTodo } from "@/schemas/todos";
 
-export const AddTodoForm: React.FC = () => {
-  const { onClose } = useAddTodoDialog();
+export interface EditTodoFormProps {
+  readonly id: number;
+  readonly todo: AddTodo;
+}
+
+export const EditTodoForm: React.FC<EditTodoFormProps> = ({ id, todo }) => {
+  const { setTodo } = useEditTodoDialog();
   const invalidateTodoAllQuery = useInvalidateTodoAllQuery();
-  const { mutate } = trpc.todo.add.useMutation({
+  const { mutate } = trpc.todo.update.useMutation({
     onSuccess: async () => {
       invalidateTodoAllQuery();
-      onClose();
+      setTodo(undefined);
     },
     onError: (error) => {
       console.error("error", error);
@@ -34,15 +40,12 @@ export const AddTodoForm: React.FC = () => {
 
   const form = useForm<AddTodo>({
     resolver: zodResolver(addTodoSchema),
-    defaultValues: {
-      name: "",
-      description: "",
-    },
+    defaultValues: todo,
   });
 
   const onSubmit = (data: AddTodo) => {
     console.log("submission", data);
-    mutate(data);
+    mutate({ id, todo: data });
   };
 
   // const hasErrors = useMemo(

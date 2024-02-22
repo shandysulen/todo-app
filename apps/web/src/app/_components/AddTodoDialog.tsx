@@ -1,28 +1,20 @@
 "use client";
 
 import {
-  Button,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@eds/components";
-import { Plus } from "lucide-react";
-import { useAddTodoModal } from "@/hooks/useAddTodoModal";
+import { useAddTodoDialog } from "@/hooks/useAddTodoDialog";
 import { AddTodoForm } from "./AddTodoDialog/AddTodoForm";
 
 export const AddTodoDialog: React.FC = () => {
-  const { onOpen } = useAddTodoModal();
+  const { isOpen, setIsOpen } = useAddTodoDialog();
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button icon={<Plus size={20} />} onClick={onOpen}>
-          Add
-        </Button>
-      </DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Add Todo</DialogTitle>

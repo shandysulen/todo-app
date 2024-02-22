@@ -10,12 +10,12 @@
     "clean:modules": "rimraf node_modules",
     "clean": "pnpm clean:analyze && pnpm clean:next && pnpm clean:modules",
     "components": "pnpx shadcn-ui@latest",
-    "db:push": "drizzle-kit push:sqlite",
-    "db:pull": "drizzle-kit introspect:sqlite",
+    "db:push": "dotenv -- drizzle-kit push:sqlite",
+    "db:pull": "dotenv -- drizzle-kit introspect:sqlite",
     "dev": "next dev",
     "lint": "next lint --fix",
     "start": "next start",
-    "studio": "drizzle-kit studio",
+    "studio": "dotenv -- drizzle-kit studio",
     "test": "jest"
   },
   "dependencies": {
@@ -79,6 +79,7 @@
     "@typescript-eslint/parser": "^5.57.1",
     "autoprefixer": "^10.4.15",
     "cross-env": "^7.0.3",
+    "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",

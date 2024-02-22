@@ -16,7 +16,8 @@ import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
 import { env } from "@/env.js";
-import { AddTodoModalProvider } from "./_components/AddTodoModalProvider";
+import { AddTodoDialogProvider } from "./_components/AddTodoDialogProvider";
+import { EditTodoDialogProvider } from "./_components/EditTodoDialogProvider";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";
 
 const wagmiConfig = createConfig(
@@ -95,7 +96,9 @@ export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
             <ConnectKitProvider>
               <ThemeProvider defaultTheme='system' attribute='class'>
                 <TooltipProvider delayDuration={0}>
-                  <AddTodoModalProvider>{children}</AddTodoModalProvider>
+                  <AddTodoDialogProvider>
+                    <EditTodoDialogProvider>{children}</EditTodoDialogProvider>
+                  </AddTodoDialogProvider>
                 </TooltipProvider>
               </ThemeProvider>
             </ConnectKitProvider>
