@@ -19,7 +19,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@eds/components": "workspace:1.0.0",
+    "@eds/components": "workspace:*",
     "@hookform/resolvers": "^3.3.1",
     "@libsql/client": "^0.3.4",
     "@t3-oss/env-nextjs": "^0.9.2",
