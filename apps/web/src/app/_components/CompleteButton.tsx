@@ -1,4 +1,4 @@
-import { Button } from "@eds/components";
+import { Button } from "@todo-app/components";
 import confetti from "canvas-confetti";
 import { useInvalidateTodoAllQuery } from "@/hooks/useInvalidateTodoAllQuery";
 import { trpc } from "../_trpc/client";

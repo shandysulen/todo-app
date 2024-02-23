@@ -1,22 +1,19 @@
 {
-  "name": "@eds/workspace",
+  "name": "@todo-app/workspace",
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:components": "pnpm --filter @eds/components build",
-    "build:components:watch": "pnpm --filter @eds/components build:watch",
-    "build:db": "pnpm --filter @eds/db build",
-    "build:web": "pnpm --filter @eds/web build",
+    "build:components": "pnpm --filter @todo-app/components build",
+    "build:components:watch": "pnpm --filter @todo-app/components build:watch",
+    "build:db": "pnpm --filter @todo-app/db build",
+    "build:web": "pnpm --filter @todo-app/web build",
     "clean:modules": "rimraf node_modules",
     "clean": "pnpm clean:modules",
-    "clean:components:dist": "pnpm --filter @eds/components clean:dist",
-    "clean:components:modules": "pnpm --filter @eds/components clean:modules",
+    "clean:components:dist": "pnpm --filter @todo-app/components clean:dist",
+    "clean:components:modules": "pnpm --filter @todo-app/components clean:modules",
     "clean:components": "pnpm clean:components:dist && pnpm clean:components:modules",
-    "clean:web:modules": "pnpm --filter @eds/web clean:modules",
-    "clean:web:next": "pnpm --filter @eds/web clean:next",
-    "dev:web": "pnpm --filter @eds/web dev"
-  },
-  "devDependencies": {
-    "typescript": "^5.2.2"
+    "clean:web:modules": "pnpm --filter @todo-app/web clean:modules",
+    "clean:web:next": "pnpm --filter @todo-app/web clean:next",
+    "dev:web": "pnpm --filter @todo-app/web dev"
   }
 }

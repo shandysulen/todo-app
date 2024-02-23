@@ -6,7 +6,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@eds/components";
+} from "@todo-app/components";
 import { useAddTodoDialog } from "@/hooks/useAddTodoDialog";
 import { AddTodoForm } from "./AddTodoDialog/AddTodoForm";
 

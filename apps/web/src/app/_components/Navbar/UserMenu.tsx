@@ -2,7 +2,7 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@eds/components";
+} from "@todo-app/components";
 import React from "react";
 import { LogOutMenuItem } from "./UserMenu/LogOutMenuItem";
 import { ProfileMenuItem } from "./UserMenu/ProfileMenuItem";

@@ -1,7 +1,7 @@
 "use client";
 
-import { Dialog, DialogContent } from "@eds/components";
 import { DialogProps } from "@radix-ui/react-dialog";
+import { Dialog, DialogContent } from "@todo-app/components";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 import * as React from "react";

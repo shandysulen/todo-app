@@ -1,4 +1,4 @@
-import { Heading } from "@eds/components";
+import { Heading } from "@todo-app/components";
 import type { PropsWithChildren } from "react";
 
 export const SitemapHeader: React.FC<PropsWithChildren> = ({ children }) => (

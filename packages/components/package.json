@@ -1,5 +1,5 @@
 {
-  "name": "@eds/components",
+  "name": "@todo-app/components",
   "version": "1.0.0",
   "description": "Component library for Ethereum Dapp Starter",
   "main": "src/index.ts",

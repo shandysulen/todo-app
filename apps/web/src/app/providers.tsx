@@ -1,6 +1,6 @@
 "use client";
 
-import { TooltipProvider } from "@eds/components";
+import { TooltipProvider } from "@todo-app/components";
 import {
   ConnectKitProvider,
   getDefaultConfig,

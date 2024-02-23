@@ -5,7 +5,7 @@ import {
   NavigationMenuContentButtonItem,
   NavigationMenuItem,
   NavigationMenuTrigger,
-} from "@eds/components";
+} from "@todo-app/components";
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 

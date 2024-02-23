@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@eds/components";
+import { Spinner } from "@todo-app/components";
 import { Suspense } from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { TodoGrid } from "./TodoGrid";

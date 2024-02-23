@@ -1,4 +1,4 @@
-import { NavigationMenuContentButtonItem } from "@eds/components";
+import { NavigationMenuContentButtonItem } from "@todo-app/components";
 import { Pencil } from "lucide-react";
 import { useEditTodoDialog } from "@/hooks/useEditTodoDialog";
 import { AddTodoWithId } from "@/schemas/todos";

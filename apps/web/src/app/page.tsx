@@ -1,4 +1,4 @@
-import { Container, Heading } from "@eds/components";
+import { Container, Heading } from "@todo-app/components";
 import { Content } from "./_components/Content";
 
 export default function Index() {

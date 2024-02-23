@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Heading } from "@eds/components";
+import { Container, Heading } from "@todo-app/components";
 import { useAccount } from "wagmi";
 
 export default function ProfilePage() {

@@ -1,6 +1,6 @@
-import { Button } from "@eds/components";
+import { Button } from "@todo-app/components";
 import { Plus } from "lucide-react";
-import { useAddTodoDialog } from "@/hooks/useAddTodoDialog.js";
+import { useAddTodoDialog } from "@/hooks/useAddTodoDialog";
 
 export const AddTodoButton: React.FC = () => {
   const { onOpen } = useAddTodoDialog();

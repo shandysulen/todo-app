@@ -1,4 +1,4 @@
-import { NavigationMenuContentButtonItem } from "@eds/components";
+import { NavigationMenuContentButtonItem } from "@todo-app/components";
 import { Trash } from "lucide-react";
 import { useInvalidateTodoAllQuery } from "@/hooks/useInvalidateTodoAllQuery";
 import { trpc } from "../_trpc/client";

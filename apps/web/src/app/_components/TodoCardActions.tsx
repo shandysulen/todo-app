@@ -4,7 +4,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@eds/components";
+} from "@todo-app/components";
 import { CircleEllipsis } from "lucide-react";
 import { useTriggerFix } from "@/hooks/useTriggerFix";
 import { DeleteMenuItem } from "./DeleteMenuItem";

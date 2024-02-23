@@ -1,4 +1,8 @@
-import { HStack, NavigationMenu, NavigationMenuList } from "@eds/components";
+import {
+  HStack,
+  NavigationMenu,
+  NavigationMenuList,
+} from "@todo-app/components";
 import React from "react";
 import { LogoLink } from "../Footer/LogoLink";
 import { OverflowNav } from "./OverflowNav";

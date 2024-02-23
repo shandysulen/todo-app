@@ -1,4 +1,4 @@
-import { Toaster } from "@eds/components";
+import { Toaster } from "@todo-app/components";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { AxiomWebVitals } from "next-axiom";

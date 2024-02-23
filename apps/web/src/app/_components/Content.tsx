@@ -1,6 +1,6 @@
 "use client";
 
-import { HStack, Stack } from "@eds/components";
+import { HStack, Stack } from "@todo-app/components";
 import { ConnectKitButton, useSIWE } from "connectkit";
 import { AddTodoButton } from "./AddTodoButton";
 import { FilterButton } from "./FilterButton";

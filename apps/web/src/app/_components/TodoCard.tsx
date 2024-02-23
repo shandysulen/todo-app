@@ -4,7 +4,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@eds/components";
+} from "@todo-app/components";
 import { CompleteButton } from "./CompleteButton";
 import { TodoCardActions } from "./TodoCardActions";
 

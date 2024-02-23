@@ -1,5 +1,6 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Button,
   Form,
@@ -11,8 +12,7 @@ import {
   FormMessage,
   Input,
   Textarea,
-} from "@eds/components";
-import { zodResolver } from "@hookform/resolvers/zod";
+} from "@todo-app/components";
 import { useForm } from "react-hook-form";
 import { trpc } from "@/app/_trpc/client";
 import { useEditTodoDialog } from "@/hooks/useEditTodoDialog";

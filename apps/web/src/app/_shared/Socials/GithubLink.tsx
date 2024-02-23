@@ -1,4 +1,4 @@
-import { ExternalLink } from "@eds/components";
+import { ExternalLink } from "@todo-app/components";
 import { Github } from "lucide-react";
 import React from "react";
 

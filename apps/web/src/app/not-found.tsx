@@ -1,4 +1,4 @@
-import { Center, Heading, HStack, Separator } from "@eds/components";
+import { Center, Heading, HStack, Separator } from "@todo-app/components";
 
 export default function NotFound() {
   return (

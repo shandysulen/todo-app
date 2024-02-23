@@ -3,6 +3,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { cn } from "@/utils/cn";
+import { PropsWithClassName } from "@/types/className";
 
 const headingVariants = cva(
   "scroll-m-20 tracking-tight text-foreground [text-wrap:balance]",
@@ -21,7 +22,9 @@ const headingVariants = cva(
 
 export interface HeadingProps
   extends PropsWithChildren,
-    ComponentPropsWithoutRef<"h1"> {
+    ComponentPropsWithoutRef<"h1">,
+    PropsWithClassName
+     {
   as?: VariantProps<typeof headingVariants>["variant"];
 }
 

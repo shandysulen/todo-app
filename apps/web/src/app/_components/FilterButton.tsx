@@ -1,4 +1,4 @@
-import { Button } from "@eds/components";
+import { Button } from "@todo-app/components";
 import { Filter } from "lucide-react";
 
 export const FilterButton: React.FC = () => {

@@ -1,4 +1,4 @@
-import { Button } from "@eds/components";
+import { Button } from "@todo-app/components";
 import { Trash } from "lucide-react";
 
 interface DeleteButtonProps {

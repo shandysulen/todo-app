@@ -1,4 +1,4 @@
-import { NavigationMenuContentButtonItem } from "@eds/components";
+import { NavigationMenuContentButtonItem } from "@todo-app/components";
 import { LogOut } from "lucide-react";
 import React from "react";
 

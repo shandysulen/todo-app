@@ -6,7 +6,7 @@ import {
   NavigationMenuItem,
   NavigationMenuTrigger,
   Separator,
-} from "@eds/components";
+} from "@todo-app/components";
 import { BookOpen, CircleEllipsis, HelpCircle } from "lucide-react";
 import React from "react";
 import { Socials } from "@/app/_shared/Socials";
