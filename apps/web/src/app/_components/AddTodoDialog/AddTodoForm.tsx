@@ -23,8 +23,8 @@ export const AddTodoForm: React.FC = () => {
   const { onClose } = useAddTodoDialog();
   const invalidateTodoAllQuery = useInvalidateTodoAllQuery();
   const { mutate } = trpc.todo.add.useMutation({
-    onSuccess: async () => {
-      invalidateTodoAllQuery();
+    onSuccess: () => {
+      void invalidateTodoAllQuery();
       onClose();
     },
     onError: (error) => {
@@ -62,7 +62,7 @@ export const AddTodoForm: React.FC = () => {
     <Form {...form}>
       <form
         className='flex flex-col gap-4 mt-4'
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={void form.handleSubmit(onSubmit)}
       >
         <FormField
           name='name'

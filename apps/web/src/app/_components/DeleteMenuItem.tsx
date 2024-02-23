@@ -11,7 +11,7 @@ export const DeleteMenuItem: React.FC<DeleteMenuItemProps> = ({ id }) => {
   const invalidateTodoAllQuery = useInvalidateTodoAllQuery();
   const { mutate: onDelete } = trpc.todo.delete.useMutation({
     onSuccess: () => {
-      invalidateTodoAllQuery();
+      void invalidateTodoAllQuery();
     },
     onError: (err) => {
       console.error(err);

@@ -9,6 +9,7 @@ import { ListViewButton } from "./ListViewButton";
 import { SuspenseTodoGrid } from "./SuspenseTodoGrid";
 
 export const Content: React.FC = () => {
+  /* eslint-disable-next-line  @typescript-eslint/no-unsafe-assignment */
   const { isSignedIn } = useSIWE();
 
   if (!isSignedIn) {

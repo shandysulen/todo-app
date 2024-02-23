@@ -13,7 +13,6 @@ import {
   Textarea,
 } from "@eds/components";
 import { zodResolver } from "@hookform/resolvers/zod";
-import confetti from "canvas-confetti";
 import { useForm } from "react-hook-form";
 import { trpc } from "@/app/_trpc/client";
 import { useEditTodoDialog } from "@/hooks/useEditTodoDialog";
@@ -29,8 +28,8 @@ export const EditTodoForm: React.FC<EditTodoFormProps> = ({ id, todo }) => {
   const { setTodo } = useEditTodoDialog();
   const invalidateTodoAllQuery = useInvalidateTodoAllQuery();
   const { mutate } = trpc.todo.update.useMutation({
-    onSuccess: async () => {
-      invalidateTodoAllQuery();
+    onSuccess: () => {
+      void invalidateTodoAllQuery();
       setTodo(undefined);
     },
     onError: (error) => {
@@ -65,7 +64,7 @@ export const EditTodoForm: React.FC<EditTodoFormProps> = ({ id, todo }) => {
     <Form {...form}>
       <form
         className='flex flex-col gap-4 mt-4'
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={void form.handleSubmit(onSubmit)}
       >
         <FormField
           name='name'

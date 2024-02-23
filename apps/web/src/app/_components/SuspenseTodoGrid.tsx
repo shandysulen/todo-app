@@ -9,7 +9,7 @@ const Fallback: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
   return (
     <div role='alert'>
       <p>Something went wrong:</p>
-      <pre>{error.message}</pre>
+      <pre>{error}</pre>
       <button onClick={resetErrorBoundary}>Try again</button>
     </div>
   );

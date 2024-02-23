@@ -15,7 +15,7 @@ import { PropsWithChildren, useEffect } from "react";
 import { SiweMessage } from "siwe";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
-import { env } from "@/env.js";
+import { env } from "@/env";
 import { AddTodoDialogProvider } from "./_components/AddTodoDialogProvider";
 import { EditTodoDialogProvider } from "./_components/EditTodoDialogProvider";
 import TrpcQueryClientProvider from "./_trpc/TrpcQueryClientProvider";

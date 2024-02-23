@@ -3,13 +3,13 @@ import { createContext, useContext } from "react";
 export const AddTodoModalContext = createContext({
   isOpen: false,
   setIsOpen: (value: boolean) => {
-    console.log("setIsOpen");
+    console.log("setIsOpen:", value);
   },
   onOpen: () => {
-    console.log("open");
+    console.log("onOpen");
   },
   onClose: () => {
-    console.log("close");
+    console.log("onClose");
   },
 });
 

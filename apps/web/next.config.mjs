@@ -25,5 +25,12 @@ const config = {
     swcPlugins: [["next-superjson-plugin", {}]],
     // serverComponentsExternalPackages: ["@libsql/client"],
   },
+  webpack(config) {
+    config.resolve.extensionAlias = {
+      ".js": [".js", ".ts"],
+      ".jsx": [".jsx", ".tsx"],
+    };
+    return config;
+  },
 };
 export default withAxiom(withBundleAnalyzer(config));

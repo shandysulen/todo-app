@@ -11,13 +11,13 @@ export const CompleteButton: React.FC<CompleteButtonProps> = ({ id }) => {
   const invalidateTodoAllQuery = useInvalidateTodoAllQuery();
   const { mutate: update } = trpc.todo.update.useMutation({
     onSuccess: () => {
-      confetti({
+      void confetti({
         particleCount: 400,
         startVelocity: 90,
         gravity: 10,
         spread: 50,
       });
-      invalidateTodoAllQuery();
+      void invalidateTodoAllQuery();
     },
     onError: (err) => {
       console.error(err);
