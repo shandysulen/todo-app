@@ -1,20 +1,15 @@
-import { PropsWithChildren } from "react";
 import { AsProps } from "@/types/as";
-import { PropsWithClassName } from "@/types/className";
-import { IdProps } from "@/types/id";
 import { cn } from "@/utils/cn";
 
 export interface StackProps
-  extends PropsWithChildren,
-    PropsWithClassName,
-    AsProps,
-    IdProps {}
+  extends React.ComponentPropsWithoutRef<"div">,
+    AsProps {}
 
 export const Stack: React.FC<StackProps> = ({ as, className, ...props }) => {
-  // const Comp = as ?? "div";
+  const Comp = as ?? "div";
 
   return (
-    <div
+    <Comp
       className={cn("flex flex-col items-start gap-2", className)}
       {...props}
     />
