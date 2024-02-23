@@ -22,7 +22,7 @@ export const DeleteMenuItem: React.FC<DeleteMenuItemProps> = ({ id }) => {
   return (
     <NavigationMenuContentButtonItem
       icon={<Trash size={20} />}
-      className='text-red-400'
+      className='text-red-500'
       onClick={() => onDelete(id)}
     >
       Delete
