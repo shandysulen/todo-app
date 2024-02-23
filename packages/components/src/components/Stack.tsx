@@ -11,10 +11,10 @@ export interface StackProps
     IdProps {}
 
 export const Stack: React.FC<StackProps> = ({ as, className, ...props }) => {
-  const Comp = as ?? "div";
+  // const Comp = as ?? "div";
 
   return (
-    <Comp
+    <div
       className={cn("flex flex-col items-start gap-2", className)}
       {...props}
     />
