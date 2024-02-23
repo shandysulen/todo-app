@@ -4,13 +4,13 @@ import { PropsWithClassName } from "@/types/className";
 import { IdProps } from "@/types/id";
 import { cn } from "@/utils/cn";
 
-export interface StackProps extends PropsWithClassName, AsProps, IdProps {}
+export interface StackProps
+  extends PropsWithChildren,
+    PropsWithClassName,
+    AsProps,
+    IdProps {}
 
-export const Stack: React.FC<PropsWithChildren<StackProps>> = ({
-  as,
-  className,
-  ...props
-}) => {
+export const Stack: React.FC<StackProps> = ({ as, className, ...props }) => {
   const Comp = as ?? "div";
 
   return (
